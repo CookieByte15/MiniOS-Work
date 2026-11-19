@@ -1,0 +1,6 @@
+*.o
+queue_test
+producer_consumer
+race_demo
+semaphore_demo
+minios
