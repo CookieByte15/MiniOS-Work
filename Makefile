@@ -4,7 +4,7 @@ CFLAGS = -Wall -pthread -Iinclude
 
 .PHONY: all clean
 
-all: queue_test semaphore_demo producer_consumer race_demo
+all: queue_test semaphore_demo producer_consumer race_demo priority_inversion_demo
 
 queue_test: examples/queue_test.c src/sync.c include/minios.h
 	$(CC) $(CFLAGS) examples/queue_test.c src/sync.c -o queue_test
@@ -18,6 +18,8 @@ producer_consumer: examples/producer_consumer.c
 race_demo: examples/race_demo.c
 	$(CC) $(CFLAGS) examples/race_demo.c -o race_demo
 
-clean:
-	rm -f queue_test semaphore_demo producer_consumer race_demo sync.o
+priority_inversion_demo: examples/priority_inversion_demo.c
+	$(CC) $(CFLAGS) examples/priority_inversion_demo.c -o priority_inversion_demo
 
+clean:
+	rm -f queue_test semaphore_demo producer_consumer race_demo priority_inversion_demo sync.o

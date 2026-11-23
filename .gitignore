@@ -4,3 +4,4 @@ producer_consumer
 race_demo
 semaphore_demo
 minios
+priority_inversion_demo
